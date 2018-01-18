@@ -80,8 +80,19 @@ public class StatistikBerechnung {
 
     private int[] generateGauss(int anzahl) {
         int[] result = new int[anzahl];
+        
+        double sd = 20;
+        double mju = 50;
+        
         for (int i = 0; i < result.length; i++) {
-            result[i] = rg.nextInt(100) + 1;
+            int z1 = rg.nextInt(100) + 1;
+            int z2 = rg.nextInt(100) + 1;
+            
+            double val1 = Math.sqrt(-2 * Math.log(z1));
+            double val2 = Math.sin(2 * Math.PI * z2);
+            double z = sd * val1 * val2 + mju;
+                        
+            result[i] = (int)Math.round(z);
         }
         return result;
     }
