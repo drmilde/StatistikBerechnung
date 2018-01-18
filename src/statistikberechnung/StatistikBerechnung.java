@@ -24,7 +24,7 @@ public class StatistikBerechnung
     {
         StatistikBerechnung sbr         = new StatistikBerechnung();
         int[]               werte       = sbr.generate(1000000);
-        int[]               werteNormal = sbr.generateGauss(1000000);
+        double[]            werteNormal = sbr.generateGauss(1000000);
         //Das Array wird nie verwendet
         
         int median = sbr.median(werte);
@@ -87,9 +87,9 @@ public class StatistikBerechnung
         return (werte[werte.length - 1] - werte[0]);
     }
     
-    private int[] generateGauss(int anzahl)
+    private double[] generateGauss(int anzahl)
     {
-        int[] result = new int[anzahl];
+        double[] result = new double[anzahl];
         
         final double sd  = 20;
         final double mju = 50;
@@ -97,13 +97,12 @@ public class StatistikBerechnung
         for (int i = 0; i < result.length; i++)
         {
             double val1 = Math.sqrt(-2 * Math.log(rg.nextInt(100) + 1));
-            double val2  = Math.sin(2 * Math.PI * rg.nextInt(100) + 1);
-            double z =
+            double val2 = Math.sin(2 * Math.PI * rg.nextInt(100) + 1);
+            result[i] = // z
                     sd * // standard deviation
                     val1 * // value 1
                     val2 + // value 2
                     mju; // mean
-            result[i] = (int) Math.round(z);
         }
         return result;
     }
