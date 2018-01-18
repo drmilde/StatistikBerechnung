@@ -96,8 +96,8 @@ public class StatistikBerechnung
         
         for (int i = 0; i < result.length; i++)
         {
-            double val1 = Math.sqrt(-2 * Math.log(rg.nextInt(100) + 1));
-            double val2 = Math.sin(2 * Math.PI * rg.nextInt(100) + 1);
+            double val1 = Math.sqrt(-2 * Math.log(rg.nextDouble()));
+            double val2 = Math.sin(2 * Math.PI * rg.nextDouble());
             result[i] = // z
                     sd * // standard deviation
                     val1 * // value 1
