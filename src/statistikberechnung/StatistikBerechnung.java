@@ -24,6 +24,7 @@ public class StatistikBerechnung {
         StatistikBerechnung sbr = new StatistikBerechnung();
         int[] werte = sbr.generate(1000000);
         int[] werteNormal = sbr.generateGauss(1000000);
+        //Das Array wird nie verwendet
 
         int median = sbr.median(werte);
         System.out.println("Median = " + median);
