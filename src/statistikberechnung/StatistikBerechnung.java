@@ -16,6 +16,7 @@ public class StatistikBerechnung {
 
     Random rg = new Random();
 
+    // added new line for testing
     /**
      * @param args the command line arguments
      */
